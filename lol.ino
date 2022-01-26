@@ -1,3 +1,4 @@
+// Variablen, die die Hertz-Angabe für die Töne speichern
 int noteC1 = 262;
 int noteD1 = 294;
 int noteE1 = 330;
@@ -12,14 +13,15 @@ int noteG2 = 784;
 int noteA2 = 880;
 
 void setup () {
-    pinMode(6,OUTPUT); // LED1
-    pinMode(7,OUTPUT); // LED2
-    pinMode(8,OUTPUT); // LED3
-    pinMode(9,OUTPUT); // Buzzer
-    pinMode(10,OUTPUT); // LED4
-    pinMode(11,OUTPUT); // LED5
-    pinMode(12,OUTPUT); // LED6
+    pinMode(6,OUTPUT); // LED1; Pin 6 als output deklariert
+    pinMode(7,OUTPUT); // LED2; Pin 7 als output deklariert
+    pinMode(8,OUTPUT); // LED3; Pin 8 als output deklariert
+    pinMode(9,OUTPUT); // Buzzer; Pin 9 als output deklariert
+    pinMode(10,OUTPUT); // LED4; Pin 10 als output deklariert
+    pinMode(11,OUTPUT); // LED5; Pin 11 als output deklariert
 }
+
+// Unterprogramm, um Takte zu speichern, die sich wiederholen
 void derZweiteTeil() {
 tone(9,noteG2,100);
 delay(100);
@@ -107,8 +109,7 @@ delay(420);
 tone(9,noteC2,100);
 delay(360);
 }
-int i;
-int o;
+// Unterprogramm, um Takte zu speichern, die sich wiederholen
 void derErsteTeil() {
 tone(9,noteC2,100);
 delay(450);
@@ -145,14 +146,6 @@ delay(150);
 tone(9,noteH1,80);
 delay(500);
 }
- /* void lauflicht() {
-    for (i = 6; i <= 8; i=i+1) {
- digitalWrite(i, HIGH); delay(500); digitalWrite(i, LOW);
- }
- 
-
-} 
-*/
 void loop () {
 led1an();
 led2an();
@@ -269,7 +262,7 @@ delay(600);
 
 // Unterprogramme, um Zeit zu sparen beim einschalten der LED's
 void led1an() {
-    digitalWrite(6,HIGH);
+    digitalWrite(6,HIGH); // auf pin 6 wird auf high gesetzt
 }
 void led2an() {
     digitalWrite(7,HIGH); // LED2
@@ -279,19 +272,16 @@ void led3an() {
 }
 
 void led4an() {
-    digitalWrite(9,HIGH);
+    digitalWrite(10,HIGH);
 }
  void led5an() {
-    digitalWrite(10,HIGH); // LED5
-}
-void led6an() {
-    digitalWrite(11,HIGH);
+    digitalWrite(11,HIGH); // LED5
 }
 
 // Unterprogramme, um Zeit zu sparen beim ausschalten der LED's
 
 void led1aus() {
-    digitalWrite(6,LOW);
+    digitalWrite(6,LOW);  // pin 6 wird auf low gesetzt
 }
 void led2aus() {
     digitalWrite(7,LOW); // LED2
@@ -301,11 +291,9 @@ void led3aus() {
 }
 
 void led4aus() {
-    digitalWrite(9,LOW);
+    digitalWrite(10,LOW);
 }
- void led5aus() {
-    digitalWrite(10,LOW); // LED5
-}
-void led6aus() {
+
+void led5aus() {
     digitalWrite(11,LOW);
 }
